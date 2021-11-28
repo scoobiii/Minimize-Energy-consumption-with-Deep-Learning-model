@@ -32,13 +32,13 @@ A camada de saída prevê os valores Q para 5 ações potenciais cobrindo as op�
 
 A fase de aprendizagem usa a técnica "Experience Replay" para treinar.
 
-! [https://github.com/LaurentVeyssier/Minimize-Energy-consumption-with-Deep-Learning-model/blob/main/Brain_Slide.png] ()
+! [Estudo de Caso] (Brain_Slide.png)
 
 # Resultados
 
 A porcentagem de energia economizada varia de acordo com os experimentos. A porcentagem é determinada simulando um ciclo anual completo. A amostra abaixo atingiu 68% do consumo de energia graças ao AI em comparação com o sistema de resfriamento integrado usual. Ambos os modelos visam manter o servidor dentro de uma faixa de temperatura ideal de 18 ° a 24 ° C. A simulação é realizada em intervalos de tempo de um minuto ao longo de um ano inteiro.
 
-! [https://github.com/LaurentVeyssier/Minimize-Energy-consumption-with-Deep-Learning-model/blob/main/savings.png] ()
+! [Resultados] (savings.png)
 
 # Os recursos da rede neural são listados a seguir:
 
