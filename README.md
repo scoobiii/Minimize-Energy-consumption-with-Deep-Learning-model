@@ -1,41 +1,41 @@
-# Minimize-Energy-consumption-with-Deep-Learning-model
-Use Deep Q-Learning model to optimize energy consumption of a data center
+# Minimize-Energy-consumer-with-Deep-Learning-model
+Use o modelo Deep Q-Learning para otimizar o consumo de energia de um data center
 
-This project leverages an AI deep learning model to optimize and reduce the energy consumption of a data center by up to 70%.
-The AI model uses Q-Learning algorithm to determine the best action at every time step.
-Q-Learning is based on Bellman equations which are at the root of Reinforcement Learning.
+Este projeto utiliza um modelo de aprendizado profundo de IA para otimizar e reduzir o consumo de energia de um data center em até 70%.
+O modelo AI usa o algoritmo Q-Learning para determinar a melhor ação em cada etapa de tempo.
+O Q-Learning é baseado nas equações de Bellman que estão na raiz do Reinforcement Learning.
 
-# Description
-The project aims to reduce energy consumption of an industrial installation. A deep learning optimization model is used and compared with the traditional integrated cooling system. The approach is inspired by the 40% reduction achieved at Google's data centers using DeepMind AI model. The project is part of Udemy' s Artificial Intelligence for Business module.
+# Descrição
+O projeto visa reduzir o consumo de energia de uma instalação industrial. Um modelo de otimização de aprendizado profundo é usado e comparado com o sistema de resfriamento integrado tradicional. A abordagem é inspirada na redução de 40% alcançada nos data centers do Google usando o modelo DeepMind AI. O projeto faz parte do módulo de Inteligência Artificial para Negócios da Udemy.
 
-In this scenario, there are two key assumptions:
-- The intrinsic temperature of a server is a function of the atmospheric temperature, the number of users on the server and the data transmission rate. The relationship is approximated by a linear combination of those 3 variables. Coefficients are estimated using regression analysis.
-- The energy spent to regulate temperature between two time steps is proportional to the absolute change in temperature. Using this linear relationship, we can estimate the energy consumption from each mechanisms to be proportional to the absolute temperature change of the server. This applies both to the AI system and to the traditional integrated cooling system.
+Neste cenário, existem duas premissas principais:
+- A temperatura intrínseca de um servidor é função da temperatura atmosférica, do número de usuários no servidor e da taxa de transmissão de dados. A relação é aproximada por uma combinação linear dessas 3 variáveis. Os coeficientes são estimados usando análise de regressão.
+- A energia gasta para regular a temperatura entre duas etapas de tempo é proporcional à mudança absoluta de temperatura. Usando essa relação linear, podemos estimar o consumo de energia de cada mecanismo para ser proporcional à mudança absoluta de temperatura do servidor. Isso se aplica tanto ao sistema AI quanto ao sistema de resfriamento integrado tradicional.
 
 # Q-Learning
-Q-Learning is a reinforcement learning algorithm to learn quality of actions telling an agent what action to take under what circumstances. It determines the value of all possible actions given a certain state (or circumstances). It does not require a model of the environment as it learns the environment while exploring it. The values of actions (or Quality of actions) are determined recursively as the algorithm explores the environment and learns from the obtained results over a high number of iterations. Q-learning finds an optimal policy (sequence of actions) maximizing the expected value of the total reward over any and all successive steps, starting from the current state. In other words, Q-learning can identify an optimal action-selection policy for any given finite Markov decision process (does not depends on the past but solely on the future actions), given infinite exploration time and a partly-random policy.  
+Q-Learning é um algoritmo de aprendizado por reforço para aprender a qualidade das ações, dizendo a um agente que ação tomar em quais circunstâncias. Ele determina o valor de todas as ações possíveis em um determinado estado (ou circunstâncias). Não requer um modelo do ambiente, pois aprende o ambiente ao explorá-lo. Os valores das ações (ou Qualidade das ações) são determinados recursivamente à medida que o algoritmo explora o ambiente e aprende com os resultados obtidos em um grande número de iterações. O Q-learning encontra uma política ótima (sequência de ações) maximizando o valor esperado da recompensa total em todas e quaisquer etapas sucessivas, a partir do estado atual. Em outras palavras, o Q-learning pode identificar uma política de seleção de ação ótima para qualquer processo de decisão Markov finito (não depende do passado, mas apenas das ações futuras), dado o tempo de exploração infinito e uma política parcialmente aleatória.
 
-Reminder (wikipedia): Reinforcement learning involves an agent, a set of states S, and a set A of actions per state. By performing an action a in A, the agent transitions from state to state. Executing an action in a specific state provides the agent with a reward (a numerical score). The goal of the agent is to maximize its total reward. It does this by adding the maximum reward attainable from future states to the reward for achieving its current state, effectively influencing the current action by the potential future reward. This potential reward is a weighted sum of the expected values of the rewards of all future steps starting from the current state.
+Lembrete (Wikipedia): A aprendizagem por reforço envolve um agente, um conjunto de estados S e um conjunto A de ações por estado. Ao executar uma ação a em A, o agente faz a transição de um estado para outro. Executar uma ação em um estado específico fornece ao agente uma recompensa (uma pontuação numérica). O objetivo do agente é maximizar sua recompensa total. Ele faz isso adicionando a recompensa máxima atingível em estados futuros à recompensa por atingir seu estado atual, influenciando efetivamente a ação atual pela recompensa futura em potencial. Essa recompensa potencial é uma soma ponderada dos valores esperados das recompensas de todas as etapas futuras a partir do estado atual.
 
-So, the Bellman equation decomposes the value into two parts, the immediate reward plus the discounted future values. The Bellman equation shows up everywhere in the Reinforcement Learning literature, being one of the central elements of many Reinforcement Learning algorithms.
+Portanto, a equação de Bellman decompõe o valor em duas partes, a recompensa imediata mais os valores futuros descontados. A equação de Bellman aparece em toda a literatura de Aprendizado por Reforço, sendo um dos elementos centrais de muitos algoritmos de Aprendizado por Reforço.
 
-In this project, the reward is defined as the absolute difference between the energy required by the cooling system vs the energy required by the AI model. This is the energy saved by AI.
+Neste projeto, a recompensa é definida como a diferença absoluta entre a energia exigida pelo sistema de refrigeração e a energia exigida pelo modelo de IA. Esta é a energia economizada pela IA.
 
-# Deep Learning model
+# Modelo de aprendizado profundo
 
-The project uses a simple neural network made of 3 fully connected layers.
-The network takes as input a normalized vector representing the state. In this problem, the state is represented by the server temperature, the number of users and the data transmission rate. The state is updated at each time step.
+O projeto usa uma rede neural simples composta por 3 camadas totalmente conectadas.
+A rede recebe como entrada um vetor normalizado que representa o estado. Neste problema, o estado é representado pela temperatura do servidor, o número de usuários e a taxa de transmissão de dados. O estado é atualizado a cada etapa de tempo.
 
-The 2 hidden layers have 64 and 32 nodes respectively.
+As 2 camadas ocultas têm 64 e 32 nós, respectivamente.
 
-The output layer predicts the Q-values for 5 potential actions covering the options available to the system. A softmax activation function generates a probability distribution over the actions. The highest probability corresponds to the highest Q-value.
+A camada de saída prevê os valores Q para 5 ações potenciais cobrindo as opções disponíveis para o sistema. Uma função de ativação softmax gera uma distribuição de probabilidade sobre as ações. A probabilidade mais alta corresponde ao valor Q mais alto.
 
-The learning phase uses "Experience Replay" technique to train.
+A fase de aprendizagem usa a técnica "Experience Replay" para treinar.
 
-![](Brain_Slide.png)
+! [] (Brain_Slide.png)
 
-# Results
+# Resultados
 
-The percentage of energy saved varies depending on the experiments. The percentage is determined simulating one full year cycle. The sample below achieved 68% energy consumption thanks to AI compared to the usual integrated cooling system. Both models aim to maintain the server within an optimal temperature range of 18° to 24°C. The simulation is performed for time steps of one minute over a full year.
+A porcentagem de energia economizada varia de acordo com os experimentos. A porcentagem é determinada simulando um ciclo anual completo. A amostra abaixo atingiu 68% do consumo de energia graças ao AI em comparação com o sistema de resfriamento integrado usual. Ambos os modelos visam manter o servidor dentro de uma faixa de temperatura ideal de 18 ° a 24 ° C. A simulação é realizada em intervalos de tempo de um minuto ao longo de um ano inteiro.
 
-![](savings.png)
+! [] (economia.png)
