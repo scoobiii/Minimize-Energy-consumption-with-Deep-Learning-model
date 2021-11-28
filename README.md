@@ -32,7 +32,7 @@ A camada de saída prevê os valores Q para 5 ações potenciais cobrindo as op�
 
 A fase de aprendizagem usa a técnica "Experience Replay" para treinar.
 
-<img src="Brain_Slide.png" width="100" height="100" />
+<img src="Brain_Slide.png" width="100%" height="100%" />
 
 # Resultados
 
