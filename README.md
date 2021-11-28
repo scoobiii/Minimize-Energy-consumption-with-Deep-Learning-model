@@ -1,4 +1,4 @@
-# Minimize-Energy-consumer-with-Deep-Learning-model
+# Minimize o consumidor de energia com o modelo DeepLearning
 Use o modelo Deep Q-Learning para otimizar o consumo de energia de um data center e sistemas de Refrigeração
 
 Este projeto utiliza um modelo de aprendizado profundo de IA para otimizar e reduzir o consumo de energia de um data center em até 70%.
@@ -64,7 +64,7 @@ Datacenter
 18. Velocidade do vento externo [mph]
 19. Direção do vento externo [deg]
 
-Camaras Frias/Ultra Congeladores
+Camaras Frias/Ultra Congeladores (em desenvolvimento)
 
 1. Carga total de mercadoria [kW]
 2. Carga de mercadoria total por camara fria (CMT) [kW]
