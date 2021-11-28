@@ -32,13 +32,13 @@ A camada de saída prevê os valores Q para 5 ações potenciais cobrindo as op�
 
 A fase de aprendizagem usa a técnica "Experience Replay" para treinar.
 
-<img src="Brain_Slide.png" width="100%" height="100%" />
+<img src="Brain_Slide.png" width="80%" height="80%" />
 
 # Resultados
 
 A porcentagem de energia economizada varia de acordo com os experimentos. A porcentagem é determinada simulando um ciclo anual completo. A amostra abaixo atingiu 68% do consumo de energia graças ao AI em comparação com o sistema de resfriamento integrado usual. Ambos os modelos visam manter o servidor dentro de uma faixa de temperatura ideal de 18 ° a 24 ° C. A simulação é realizada em intervalos de tempo de um minuto ao longo de um ano inteiro.
 
-<img src="savings.png" width="100" height="100" />
+<img src="savings.png" width="80%" height="80%" />
 
 # Os recursos da rede neural são listados a seguir:
 
