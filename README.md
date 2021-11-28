@@ -1,4 +1,4 @@
-# Minimize o consumidor de energia com o modelo DeepLearning
+# Minimize o consumidor de energia em Datacenter e Refrigeração com o modelo DeepLearning
 Use o modelo Deep Q-Learning para otimizar o consumo de energia de um data center e sistemas de Refrigeração
 
 Este projeto utiliza um modelo de aprendizado profundo de IA para otimizar e reduzir o consumo de energia de um data center em até 70%.
