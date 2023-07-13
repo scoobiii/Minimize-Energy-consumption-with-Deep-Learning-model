@@ -11,13 +11,7 @@ Aqui estão alguns detalhes adicionais sobre os dois métodos:
 
 * **Controle de autoajustamento:** O controle de autoajustamento é um tipo de IA que pode ser usado para otimizar o desempenho do sistema de resfriamento de um data cloud. Ele faz isso monitorando constantemente as condições do ambiente e ajustando os parâmetros de resfriamento de acordo. Por exemplo, se a temperatura do ar aumentar, o controle de autoajustamento pode ligar os chillers ou aumentar a velocidade dos ventiladores. Se a temperatura do ar cair, o controle de autoajustamento pode desligar os chillers ou diminuir a velocidade dos ventiladores.
 * **Aprendizado profundo:** O aprendizado profundo é um tipo de IA que pode ser usado para aprender com os dados históricos e prever as condições futuras. Isso pode ser usado para otimizar o uso de energia dos servidores em um data cloud. Por exemplo, o aprendizado profundo pode ser usado para prever a carga de trabalho de um servidor e ajustar o uso da CPU, memória, trafego de dados, temperatura dos nucleos, uso de memoria, consumo de energia por prompt e armazenamento de acordo. Isso pode levar a uma redução no consumo de energia dos servidores impactando o PUE.
-
-#DeepEnergy
-Ambos os métodos são promissores e provavelmente serão usados em conjunto no futuro, o objetivo presente, do DeepCool ao ampliar o alcance do MECDLM. A combinação de métodos pode levar a uma redução significativa no consumo de energia dos data clouds validada, mensurada, qualificada e certificada na conta de luz, a ser neutralizada com o uso de geradores de energia ativos, full time, turbinas hibridas a gas natural (90%) e hidrogênio (10%) na fase I, podendo chegar a NG/H2 15/85% suprido por gasodutos hibridos NG/H2, ja que as turbinas hibridas já são comerciais e aguardam upgrade das distribuidoras de gas
-
-#DeepFood
-Embora DeepFood reduz o uso de sistemas de refrigeração, vai muito além pois gasodutos hibridos, também abastecem fogões, aquecedodores residenciais, comerciais e industriais impactando significativamente as emissões e os 17 ODS e 169
-
+ 
 # DeepCool
 Use o modelo Deep Q-Learning para otimizar o consumo de energia de um data cloud e sistemas de Refrigeração
 
@@ -65,7 +59,7 @@ A porcentagem de energia economizada varia de acordo com os experimentos. A porc
 
 # Os recursos da rede neural são listados a seguir:
 
-Datacenter 
+# DeepCloud 
 
 1. Fabricante, modelo, numero de serie do Sistema de Resfriamento (chiller)
 2. Fabricante, modelo, numero de serie do sistemas de resfriamento interno (fancoil) ou equivalente
@@ -114,3 +108,28 @@ Datacenter
 
 # Meta
 Datacenter PUE 1.0 com redução de consumo de energia de 70%
+
+# DeepEnergy
+Ambos os métodos são promissores e provavelmente serão usados em conjunto no futuro, o objetivo presente, do DeepCool ao ampliar o alcance do MECDLM. A combinação de métodos pode levar a uma redução significativa no consumo de energia dos data clouds validada, mensurada, qualificada e certificada na conta de luz, a ser neutralizada com o uso de geradores de energia ativos, full time, turbinas hibridas com eficiência energética de 85%, a gas natural (90%) e hidrogênio (10%) na fase I, podendo chegar a NG/H2 15/85% suprido por gasodutos hibridos NG/H2, ja que as turbinas hibridas já são comerciais e aguardam upgrade das distribuidoras de gas
+
+# DeepH2
+H2. Esse cara é um elemnto importante do hack energy e transição para NetZero
+
+# DeepChiller
+Chiller a absorção, não elétrico, convertem o calor residul proveniente de DeepEnergy em Frio para resfriamento, air cooling ou server liquid cooling
+
+# DeepTiac
+Sistema de resfriamento do ar na entrada das turbinas hibridas, assegurando a condição ISO de projeto 15oC/60% 
+
+# DeepFog
+Sistema de aspersão de vapor (15 oC na entrada das deepturbines) para assegurar controle de temperatura e umidade relativa.
+
+# DeepFood
+DeepFood reduz a conta de energia dos sistemas de refrigeração e gas do nosso proximo fogão wok, https://youtu.be/02QMhK3OAdw, portanto, deepfood vai muito além, pois demanda gasodutos hibridos, gas natural e hidrogênio, inciando a NG/H2 90/10%, para fogões, aquecedodores residenciais, residenciais, comerciais e industriais impactando e reduzindo significativamente as emissões 
+
+# DeepODS 
+os 17 ODS e 169 metas e indicadores são atendidos pelo #DeepHack no sistema de energia, antes, durante e depois da trainsição #netZero em 2050, passando por redução de emissões em 20% até o ODS2030, base emissões 2017, aumento do gdp per capita em São Paulo para US$50.000,00 até 2030 alinhado alinhado ao PANCLIMA para zerar ao aquecimento global até 2050, sub produto de power losses (ineficiência energética)
+https://lh6.googleusercontent.com/z_UI18ELpfqeMJOWqBVf8Oc8nhAzsvbxHooJAMTCWH8CAXSl5OSFXsevBvy-YIJEZ8VR_E9bIfFMNZuscCBXW5XfTbIrnCTKL-nggJOdJ3Iw2euU8D7aijD0uKTS5cQhqvSD0_8JzEHlufVS_QNka_s
+
+# DeepRendaPercapita
+Graças ao Pré Sal, Maricá no Rio de Janeiro teve incremento de renda per capita de US$2000.00 em 2010, para US$45.000 em 2019, maior que o japão, portanto, vale a penao o #hackenergy com expectativa de melhor ganho em renda per capita.
