@@ -47,62 +47,50 @@ A porcentagem de energia economizada varia de acordo com os experimentos. A porc
 
 Datacenter 
 
-1. Carga total de TI do servidor [kW]
-2. Carga de TI total da sala de rede principal do campus (CCNR) [kW]
-3. Número total de bombas de água de processo (PWP) em execução
-4. Velocidade média do conversor de frequência variável (VFD) [%]
-5. Número total de bombas de água do condensador (CWP) funcionando
-6. Velocidade média do conversor de frequência variável (VFD) [%]
-7. Número total de torres de resfriamento funcionando
-8. Ponto de ajuste médio da temperatura de saída da água da torre de resfriamento (LWT) [F]
-9. Número total de chillers funcionando
-10. Número total de drycoolers funcionando
-11. Número total de bombas de injeção de água gelada funcionando
-12. Temperatura média do ponto de ajuste da bomba de injeção de água gelada [F]
-13. Temperatura média de aproximação do trocador de calor [F]
-14. Temperatura do bulbo úmido do ar externo (WB) [F]
-15. Temperatura do bulbo seco do ar externo (DB) [F]
-16. Entalpia de ar externo [kJ / kg]
-17. Umidade relativa do ar externo (UR) [%]
-18. Velocidade do vento externo [mph]
-19. Direção do vento externo [deg]
-
-Camaras Frias/Ultra Congeladores (em desenvolvimento)
-
-1. Carga total de mercadoria [kW]
-2. Carga de mercadoria total por camara fria (CMT) [kW]
-3. Número total de ventiladores de evaporadores (VET) em execução
-4. Velocidade média do conversor de frequência variável por compressor/câmara (VFD) [%]
-5. Número total de ventiladores do condensador (CWP) funcionando
-6. Velocidade média do conversor de frequência variável por compressor (VFC) [%]
-7. Velocidade média do conversor de frequência variável por ventilador do condensador (VFCD)
-8. Velocidade média do conversor de frequência variável por ventilador do evaporador (VFE)
-9. Número total de condesadores em funcionando
-10. Ponto de ajuste médio da temperatura de saída do ar dos condensadores (TSC)
-11. Número total de maquinas funcionando
-12. Número total de condensadores funcionando
-13. Número total de ventiladores de evaporador funcionando
-14. Temperatura média do ponto de ajuste de temperatura das camaras
-15. Temperatura média de aproximação do trocador de calor
-16. Temperatura do bulbo úmido do ar externo (TBU) 
-17. Temperatura do bulbo seco do ar externo (TBS)
-18. Entalpia de ar externo [kJ / kg]
-19. Umidade relativa do ar externo (URE) [%]
-20. Umidade relativa do ar externo (URI) [%]
-21. Indice de CO2 por câmara (PPMI)
-22. Indice de CO2 externo(PPME)
-23. Indice de O2 externo(PPME)
-24.  Indice de O2 interno(PPMI)
-25. Velocidade do vento externo [mph]
-26. Direção do vento externo [deg]
-27. BenchMark: Gerenciador de unidades de refrigeração Liebert iCOM : O novo sistema Liebert iCOM controla múltiplas unidades de refrigeração ajudando a reduzir o consumo de energia do equipamento de ar condicionado em até 50%. É um ponto único para centralizar os dados de unidades de refrigeração e sensores de temperatura para harmonizar e otimizar o desempenho do sistema térmico em todo o data center, obter acesso rápido aos dados acionáveis e automatizar diagnósticos e tendências do sistema.: [https://www.vertiv.com/49f28a/globalassets/shared/liebert-icom-intelligent-communication-and-monitoring-for-liebert-dse-packaged_00.pdf](https://www.vertiv.com/48daea/globalassets/products/thermal-management/thermal-control-and-monitoring/liebert-icom-br-pt-br-latam-sl-18843.pdf) https://www.vertiv.com/490a89/globalassets/products/thermal-management/thermal-control-and-monitoring/liebert-icom-s-user-manual.pdf
-28. BenchMark: Unidade de Free-Cooling Evaporativo Indireto Liebert EFC. O Liebert EFC consegue reduzir as temperaturas do ar aplicando o princípio do arrefecimento evaporativo. O processo envolve a evaporação de água que, como consequência, arrefece o ar circundante. Através desta tecnologia, o Liebert EFC consegue atingir níveis de pPUE de 1.2, garantindo a máxima eficiência energética e minimizando os custos operativos
-29. BenchMark: Liebert DSE Packaged Free-Cooling Solution, 400-500kW Perimeter Configuration: https://www.vertiv.com/4a4edb/globalassets/shared/liebert-dse400-ds-en-na-sl-18937_209440.pdf
-30. BenchMark: Chiller com Free Cooling Adiabático Liebert AFC 500 a 1450 kW: O Liebert® AFC combina os níveis excepcionais de eficiência energética permitidos pelo free cooling com a disponibilidade contínua garantida pelo sistema auxiliar por compressor multi-scroll e o sistema adiabático. Este último umidifica o ar que entra nas serpentinas de free cooling e de condensação, aumentando as horas de operação em free cooling e a eficiência mecânica. https://www.vertiv.com/499942/globalassets/products/thermal-management/free-cooling-chillers/liebert-afc-br-pt-br-latam-mka4l0ukafc-pt-rev.3-11-2014.pdf
-31. BenchMark: Liebert HPC-S - Air-cooled, Freecooling and Adiabatic Freecooling Chillers https://www.vertiv.com/499942/globalassets/products/thermal-management/free-cooling-chillers/liebert-afc-br-pt-br-latam-mka4l0ukafc-pt-rev.3-11-2014.pdf
-32. BenchMark: https://www.vertiv.com/499942/globalassets/products/thermal-management/free-cooling-chillers/liebert-afc-br-pt-br-latam-mka4l0ukafc-pt-rev.3-11-2014.pdf
+1. Fabricante, modelo, numero de serie do Sistema de Resfriamento (chiller)
+2. Fabricante, modelo, numero de serie do sistemas de resfriamento interno (fancoil) ou equivalente
+2. Fabricante, modelo, numero de serie do hack U
+3. Fabricante, modelo, numero de serie do server, quantidade de nucles
+4. Server - Temperatura por nucleos
+5. Server - Carga de uso por CPU
+6. Server - Carga de uso de memória ram
+7. Server - Numero de usuarios
+8. Server - Consumo de ernergia por CPU kwh
+9. Server - Consumo de ernergia por prompt kwh
+10. Server - Consumo de energia por server kwh
+11. Carga total de TI do hack U [kW]
+12. Carga total de TI do data cloud [kW]
+13. Carga de TI total da sala de rede principal do campus (CCNR) [kW]
+14. Número total de bombas de água Agua Gelada de processo (PWP) em execução
+15. Velocidade média do conversor de frequência variável (VFD) [%]
+16. Número total de bombas de água do condensador (CWP) funcionando
+17. Velocidade média do conversor de frequência variável (VFD) [%]
+18. Número total de torres de resfriamento funcionando
+19. Ponto de ajuste médio da temperatura de saída da água da torre de resfriamento (LWT) [F]
+20. Número total de chillers funcionando
+21. Número total de drycoolers funcionando
+22. Número total de bombas de injeção de água gelada funcionando
+23. Temperatura média do ponto de ajuste da bomba de injeção de água gelada [F]
+24. Temperatura média de aproximação do trocador de calor [F]
+25. Temperatura do bulbo úmido do ar externo (WB) [F]
+26. Temperatura do bulbo seco do ar externo (DB) [F]
+27. Entalpia de ar externo [kJ / kg]
+28. Umidade relativa do ar externo (UR) [%]
+29. Velocidade do vento externo [mph]
+30. Direção do vento externo [deg]
+31. Fabricante, modelo, numero de serie, capacidade do gerador a gas natural/H2 (10%), capacidade
+32. Fabricante, modelo, numero de serie, capacidade do chiller elétrico
+33. Fabricante, modelo, numero de serie, capacidade do chiller não eletrico (absorção)
+34. Certificação: PUE
+35. Certificação: TIER
+36. Certificação: ISO 50001
+37. 
+38. BenchMark: Gerenciador de unidades de refrigeração Liebert iCOM : O novo sistema Liebert iCOM controla múltiplas unidades de refrigeração ajudando a reduzir o consumo de energia do equipamento de ar condicionado em até 50%. É um ponto único para centralizar os dados de unidades de refrigeração e sensores de temperatura para harmonizar e otimizar o desempenho do sistema térmico em todo o data center, obter acesso rápido aos dados acionáveis e automatizar diagnósticos e tendências do sistema.: [https://www.vertiv.com/49f28a/globalassets/shared/liebert-icom-intelligent-communication-and-monitoring-for-liebert-dse-packaged_00.pdf](https://www.vertiv.com/48daea/globalassets/products/thermal-management/thermal-control-and-monitoring/liebert-icom-br-pt-br-latam-sl-18843.pdf) https://www.vertiv.com/490a89/globalassets/products/thermal-management/thermal-control-and-monitoring/liebert-icom-s-user-manual.pdf
+39. BenchMark: Unidade de Free-Cooling Evaporativo Indireto Liebert EFC. O Liebert EFC consegue reduzir as temperaturas do ar aplicando o princípio do arrefecimento evaporativo. O processo envolve a evaporação de água que, como consequência, arrefece o ar circundante. Através desta tecnologia, o Liebert EFC consegue atingir níveis de pPUE de 1.2, garantindo a máxima eficiência energética e minimizando os custos operativos
+40. BenchMark: Liebert DSE Packaged Free-Cooling Solution, 400-500kW Perimeter Configuration: https://www.vertiv.com/4a4edb/globalassets/shared/liebert-dse400-ds-en-na-sl-18937_209440.pdf
+41. BenchMark: Chiller com Free Cooling Adiabático Liebert AFC 500 a 1450 kW: O Liebert® AFC combina os níveis excepcionais de eficiência energética permitidos pelo free cooling com a disponibilidade contínua garantida pelo sistema auxiliar por compressor multi-scroll e o sistema adiabático. Este último umidifica o ar que entra nas serpentinas de free cooling e de condensação, aumentando as horas de operação em free cooling e a eficiência mecânica. https://www.vertiv.com/499942/globalassets/products/thermal-management/free-cooling-chillers/liebert-afc-br-pt-br-latam-mka4l0ukafc-pt-rev.3-11-2014.pdf
+42. BenchMark: Liebert HPC-S - Air-cooled, Freecooling and Adiabatic Freecooling Chillers https://www.vertiv.com/499942/globalassets/products/thermal-management/free-cooling-chillers/liebert-afc-br-pt-br-latam-mka4l0ukafc-pt-rev.3-11-2014.pdf
+43. BenchMark: https://www.vertiv.com/499942/globalassets/products/thermal-management/free-cooling-chillers/liebert-afc-br-pt-br-latam-mka4l0ukafc-pt-rev.3-11-2014.pdf
 
 # Meta
 Datacenter PUE 1.0 com redução de consumo de energia de 70%
-
-Refrigeração: redução de consumo de energia de 70%
