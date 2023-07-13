@@ -1,12 +1,32 @@
-# Minimize o consumidor de energia em Datacenter e Refrigeração com o modelo DeepLearning
-Use o modelo Deep Q-Learning para otimizar o consumo de energia de um data center e sistemas de Refrigeração
+# DeepCool 
+Dois métodos diferentes são usados para melhorar a eficiência energética dos data clouds. O primeiro é o controle de autoajustamento (empregado pela Vertiv), que é um tipo de IA que pode ser usado para otimizar o desempenho do sistema de resfriamento de um data cloud. O segundo é o deep learning, aprendizado profundo, para otimizar o uso de energia dos servidores em um data cloud.
 
-Este projeto utiliza um modelo de aprendizado profundo de IA para otimizar e reduzir o consumo de energia de um data center em até 70%.
+Ambos os métodos têm o potencial de reduzir significativamente o consumo de energia dos data clouds. O controle de autoajustamento pode melhorar a eficiência do sistema de resfriamento ajustando automaticamente os parâmetros de resfriamento de acordo com as condições atuais. O aprendizado profundo pode melhorar a eficiência do uso de energia dos servidores otimizando o uso da CPU, memória e armazenamento.
+
+Embora ambos os métodos tenham o potencial de reduzir significativamente o consumo de energia, o aprendizado profundo tem o potencial de ser mais eficaz do que o controle de autoajustamento. O aprendizado profundo pode aprender com os dados históricos para prever as condições futuras e ajustar os parâmetros do sistema de acordo. O controle de autoajustamento, por outro lado, só pode ajustar os parâmetros do sistema de acordo com as condições atuais.
+
+Ambos os métodos são promissores e provavelmente serão usados em conjunto no futuro. O controle de autoajustamento pode ser usado para melhorar a eficiência geral do sistema de resfriamento, enquanto o aprendizado profundo pode ser usado para otimizar o uso de energia dos servidores. Essa combinação de métodos pode levar a uma redução significativa no consumo de energia dos data clouds.
+
+Aqui estão alguns detalhes adicionais sobre os dois métodos:
+
+* **Controle de autoajustamento:** O controle de autoajustamento é um tipo de IA que pode ser usado para otimizar o desempenho do sistema de resfriamento de um data cloud. Ele faz isso monitorando constantemente as condições do ambiente e ajustando os parâmetros de resfriamento de acordo. Por exemplo, se a temperatura do ar aumentar, o controle de autoajustamento pode ligar os chillers ou aumentar a velocidade dos ventiladores. Se a temperatura do ar cair, o controle de autoajustamento pode desligar os chillers ou diminuir a velocidade dos ventiladores.
+* **Aprendizado profundo:** O aprendizado profundo é um tipo de IA que pode ser usado para aprender com os dados históricos e prever as condições futuras. Isso pode ser usado para otimizar o uso de energia dos servidores em um data cloud. Por exemplo, o aprendizado profundo pode ser usado para prever a carga de trabalho de um servidor e ajustar o uso da CPU, memória, trafego de dados, temperatura dos nucleos, uso de memoria, consumo de energia por prompt e armazenamento de acordo. Isso pode levar a uma redução no consumo de energia dos servidores impactando o PUE.
+
+#DeepEnergy
+Ambos os métodos são promissores e provavelmente serão usados em conjunto no futuro, o objetivo presente, do DeepCool ao ampliar o alcance do MECDLM. A combinação de métodos pode levar a uma redução significativa no consumo de energia dos data clouds validada, mensurada, qualificada e certificada na conta de luz, a ser neutralizada com o uso de geradores de energia ativos, full time, turbinas hibridas a gas natural (90%) e hidrogênio (10%) na fase I, podendo chegar a NG/H2 15/85% suprido por gasodutos hibridos NG/H2, ja que as turbinas hibridas já são comerciais e aguardam upgrade das distribuidoras de gas
+
+#DeepFood
+Embora DeepFood reduz o uso de sistemas de refrigeração, vai muito além pois gasodutos hibridos, também abastecem fogões, aquecedodores residenciais, comerciais e industriais impactando significativamente as emissões e os 17 ODS e 169
+
+# DeepCool
+Use o modelo Deep Q-Learning para otimizar o consumo de energia de um data cloud e sistemas de Refrigeração
+
+Este projeto utiliza um modelo de aprendizado profundo de IA para otimizar e reduzir o consumo de energia de um data cloud em até 70%.
 O modelo AI usa o algoritmo Q-Learning para determinar a melhor ação em cada etapa de tempo.
 O Q-Learning é baseado nas equações de Bellman que estão na raiz do Reinforcement Learning.
 
 # Descrição
-O projeto visa reduzir o consumo de energia de uma instalação industrial. Um modelo de otimização de aprendizado profundo é usado e comparado com o sistema de resfriamento integrado tradicional. A abordagem é inspirada na redução de 40% alcançada nos data centers do Google usando o modelo DeepMind AI. O projeto faz parte do módulo de Inteligência Artificial para Negócios da Udemy.
+O projeto visa reduzir o consumo de energia de uma instalação industrial. Um modelo de otimização de aprendizado profundo é usado e comparado com o sistema de resfriamento integrado tradicional. A abordagem é inspirada na redução de 40% alcançada nos data clouds do Google usando o modelo DeepMind AI. O projeto faz parte do módulo de Inteligência Artificial para Negócios da Udemy.
 
 Neste cenário, existem duas premissas principais:
 - A temperatura intrínseca de um servidor é função da temperatura atmosférica, do número de usuários no servidor e da taxa de transmissão de dados. A relação é aproximada por uma combinação linear dessas 3 variáveis. Os coeficientes são estimados usando análise de regressão.
@@ -85,7 +105,7 @@ Datacenter
 35. Certificação: TIER
 36. Certificação: ISO 50001
 37. 
-38. BenchMark: Gerenciador de unidades de refrigeração Liebert iCOM : O novo sistema Liebert iCOM controla múltiplas unidades de refrigeração ajudando a reduzir o consumo de energia do equipamento de ar condicionado em até 50%. É um ponto único para centralizar os dados de unidades de refrigeração e sensores de temperatura para harmonizar e otimizar o desempenho do sistema térmico em todo o data center, obter acesso rápido aos dados acionáveis e automatizar diagnósticos e tendências do sistema.: [https://www.vertiv.com/49f28a/globalassets/shared/liebert-icom-intelligent-communication-and-monitoring-for-liebert-dse-packaged_00.pdf](https://www.vertiv.com/48daea/globalassets/products/thermal-management/thermal-control-and-monitoring/liebert-icom-br-pt-br-latam-sl-18843.pdf) https://www.vertiv.com/490a89/globalassets/products/thermal-management/thermal-control-and-monitoring/liebert-icom-s-user-manual.pdf
+38. BenchMark: Gerenciador de unidades de refrigeração Liebert iCOM : O novo sistema Liebert iCOM controla múltiplas unidades de refrigeração ajudando a reduzir o consumo de energia do equipamento de ar condicionado em até 50%. É um ponto único para centralizar os dados de unidades de refrigeração e sensores de temperatura para harmonizar e otimizar o desempenho do sistema térmico em todo o data cloud, obter acesso rápido aos dados acionáveis e automatizar diagnósticos e tendências do sistema.: [https://www.vertiv.com/49f28a/globalassets/shared/liebert-icom-intelligent-communication-and-monitoring-for-liebert-dse-packaged_00.pdf](https://www.vertiv.com/48daea/globalassets/products/thermal-management/thermal-control-and-monitoring/liebert-icom-br-pt-br-latam-sl-18843.pdf) https://www.vertiv.com/490a89/globalassets/products/thermal-management/thermal-control-and-monitoring/liebert-icom-s-user-manual.pdf
 39. BenchMark: Unidade de Free-Cooling Evaporativo Indireto Liebert EFC. O Liebert EFC consegue reduzir as temperaturas do ar aplicando o princípio do arrefecimento evaporativo. O processo envolve a evaporação de água que, como consequência, arrefece o ar circundante. Através desta tecnologia, o Liebert EFC consegue atingir níveis de pPUE de 1.2, garantindo a máxima eficiência energética e minimizando os custos operativos
 40. BenchMark: Liebert DSE Packaged Free-Cooling Solution, 400-500kW Perimeter Configuration: https://www.vertiv.com/4a4edb/globalassets/shared/liebert-dse400-ds-en-na-sl-18937_209440.pdf
 41. BenchMark: Chiller com Free Cooling Adiabático Liebert AFC 500 a 1450 kW: O Liebert® AFC combina os níveis excepcionais de eficiência energética permitidos pelo free cooling com a disponibilidade contínua garantida pelo sistema auxiliar por compressor multi-scroll e o sistema adiabático. Este último umidifica o ar que entra nas serpentinas de free cooling e de condensação, aumentando as horas de operação em free cooling e a eficiência mecânica. https://www.vertiv.com/499942/globalassets/products/thermal-management/free-cooling-chillers/liebert-afc-br-pt-br-latam-mka4l0ukafc-pt-rev.3-11-2014.pdf
