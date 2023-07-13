@@ -129,7 +129,12 @@ DeepFood reduz a conta de energia dos sistemas de refrigeração e gas do nosso 
 
 # DeepODS 
 os 17 ODS e 169 metas e indicadores são atendidos pelo #DeepHack no sistema de energia, antes, durante e depois da trainsição #netZero em 2050, passando por redução de emissões em 20% até o ODS2030, base emissões 2017, aumento do gdp per capita em São Paulo para US$50.000,00 até 2030 alinhado alinhado ao PANCLIMA para zerar ao aquecimento global até 2050, sub produto de power losses (ineficiência energética)
-https://lh6.googleusercontent.com/z_UI18ELpfqeMJOWqBVf8Oc8nhAzsvbxHooJAMTCWH8CAXSl5OSFXsevBvy-YIJEZ8VR_E9bIfFMNZuscCBXW5XfTbIrnCTKL-nggJOdJ3Iw2euU8D7aijD0uKTS5cQhqvSD0_8JzEHlufVS_QNka_s
+
+<img src="https://lh4.googleusercontent.com/N-jysswi3F09FriSlYmm9eVVTNQlmixAwZ_qPVPkfYWgPI0SByr1dyFM8JreMtxQ07tFUMceq79SzKyz21OY86-n3QDIudZfcwKNBTMU60raco1n29XJTVJqNh7toeCVo8z3C-rEwT8qKNO-gcC-9sU" width="80%" height="80%" />
+
+
+<img src="https://lh6.googleusercontent.com/z_UI18ELpfqeMJOWqBVf8Oc8nhAzsvbxHooJAMTCWH8CAXSl5OSFXsevBvy-YIJEZ8VR_E9bIfFMNZuscCBXW5XfTbIrnCTKL-nggJOdJ3Iw2euU8D7aijD0uKTS5cQhqvSD0_8JzEHlufVS_QNka_s" width="80%" height="80%" />
+
 
 # DeepRendaPercapita
 Graças ao Pré Sal, Maricá no Rio de Janeiro teve incremento de renda per capita de US$2000.00 em 2010, para US$45.000 em 2019, maior que o japão, portanto, vale a penao o #hackenergy com expectativa de melhor ganho em renda per capita.
