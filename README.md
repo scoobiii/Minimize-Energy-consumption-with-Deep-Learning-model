@@ -1,4 +1,4 @@
-
+# Minimize Energy Consumption with Deep Learing Model
 Use o modelo Deep Q-Learning para otimizar o consumo de energia de um data cloud e sistemas de Refrigeração
 
 Este projeto utiliza um modelo de aprendizado profundo de IA para otimizar e reduzir o consumo de energia de um data cloud em até 70%.
@@ -46,6 +46,7 @@ A porcentagem de energia economizada varia de acordo com os experimentos. A porc
 
 # DeepCool 
 Dois métodos diferentes são usados para melhorar a eficiência energética dos data clouds. O primeiro é o **controle de autoajustamento, que é um tipo de IA** que pode ser usado para otimizar o desempenho do sistema de resfriamento de um data cloud. O segundo é o **deep learning, aprendizado profundo**, para otimizar o uso de energia dos servidores em um data cloud.
+O projeto faz parte do módulo de **Inteligência Artificial DeepEnergy para Negócios da Udemy.**
 
 Ambos os métodos têm o potencial de reduzir significativamente o consumo de energia dos data clouds. O controle de autoajustamento pode melhorar a eficiência do sistema de resfriamento ajustando automaticamente os parâmetros de resfriamento de acordo com as condições atuais. O aprendizado profundo pode melhorar a eficiência do uso de energia dos servidores otimizando o uso da CPU, memória e armazenamento.
 
@@ -55,10 +56,10 @@ Ambos os métodos são promissores e vamos aplica-los simultaneamente. O control
 
 Aqui estão alguns detalhes adicionais sobre os dois métodos:
 
-* **Controle de autoajustamento:** O controle de autoajustamento é um tipo de IA que pode ser usado para otimizar o desempenho do sistema de resfriamento de um data cloud. Ele faz isso monitorando constantemente as condições do ambiente e ajustando os parâmetros de resfriamento de acordo. Por exemplo, se a temperatura do ar aumentar, o controle de autoajustamento pode ligar os chillers ou aumentar a velocidade dos ventiladores. Se a temperatura do ar cair, o controle de autoajustamento pode desligar os chillers ou diminuir a velocidade dos ventiladores.
+* **Controle de autoajustamento:** O controle de autoajustamento é um tipo de IA, estado da arte empregado pelo mercado, que pode ser usado para otimizar o desempenho do sistema de resfriamento de um data cloud. Ele faz isso monitorando constantemente as condições do ambiente e ajustando os parâmetros de resfriamento de acordo. Por exemplo, se a temperatura do ar aumentar, o controle de autoajustamento pode ligar os chillers ou aumentar a velocidade dos ventiladores. Se a temperatura do ar cair, o controle de autoajustamento pode desligar os chillers ou diminuir a velocidade dos ventiladores.
 * **Aprendizado profundo:** O aprendizado profundo é um tipo de IA que pode ser usado para aprender com os dados históricos e prever as condições futuras. Isso pode ser usado para otimizar o uso de energia dos servidores em um data cloud. Por exemplo, o aprendizado profundo pode ser usado para prever a carga de trabalho de um servidor e ajustar o uso da CPU, memória, trafego de dados, temperatura dos nucleos, uso de memoria, consumo de energia por prompt e armazenamento de acordo. Isso pode levar a uma redução no consumo de energia dos servidores impactando o PUE.
  
-# Os recursos da rede neural são listados a seguir:
+**Os recursos da rede neural são listados a seguir**
 
 # DeepCloud 
 
