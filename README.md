@@ -59,7 +59,102 @@ Aqui estão alguns detalhes adicionais sobre os dois métodos:
 * **Controle de autoajustamento:** O controle de autoajustamento é um tipo de IA, estado da arte empregado pelo mercado, que pode ser usado para otimizar o desempenho do sistema de resfriamento de um data cloud. Ele faz isso monitorando constantemente as condições do ambiente e ajustando os parâmetros de resfriamento de acordo. Por exemplo, se a temperatura do ar aumentar, o controle de autoajustamento pode ligar os chillers ou aumentar a velocidade dos ventiladores. Se a temperatura do ar cair, o controle de autoajustamento pode desligar os chillers ou diminuir a velocidade dos ventiladores.
 * **Aprendizado profundo:** O aprendizado profundo é um tipo de IA que pode ser usado para aprender com os dados históricos e prever as condições futuras. Isso pode ser usado para otimizar o uso de energia dos servidores em um data cloud. Por exemplo, o aprendizado profundo pode ser usado para prever a carga de trabalho de um servidor e ajustar o uso da CPU, memória, trafego de dados, temperatura dos nucleos, uso de memoria, consumo de energia por prompt e armazenamento de acordo. Isso pode levar a uma redução no consumo de energia dos servidores impactando o PUE.
  
-**Os recursos da rede neural são listados a seguir**
+# DeeDeep
+
+| Atividade | Consumo de energia (watts) | Tempo (minutos) | Consumo de energia (kWh) | Custo (R$) |
+|---|---|---|---|---|
+| Banho 😱 | 5500 | 10 | 5,5 | 0,34 |
+| Mineração de *PLIMM 😱😱 | 4466,8 | 10 | 4,47 | 0,28 |
+| Gerando Prompt GPT 😱😱😱 | 2600,84 | 10 | 2,6 | 0,16 |
+
+*[PLIMM Initiative](https://opensea.io/collection/plimm)
+ [USA&CCNFT Initiative](https://opensea.io/collection/usa-ccnfts)
+ [PopLixo Initiative](https://opensea.io/collection/poplixo)
+ [PopCity Initiative](https://opensea.io/collection/poplixocity)
+
+# Gerar um prompt chatgpt, consome absurdos de energia, portanto, para viabilizar AI e veiculos elétricos.....
+
+Como você pode ver, a mineração de PLIMM consome mais energia do que um banho ou gerar prompt. No entanto, o custo da mineração de PLIMM é menor do que o custo de um banho ou gerar prompt, porque o PLIMM é uma moeda digital que pode ser minerada com um computador.
+
+É importante notar que esses são apenas exemplos e o consumo real de energia pode variar dependendo do modelo específico do chuveiro, da temperatura da água e da duração do banho.
+
+**Project News** ⚡ 
+
+- \[2023/07\] [`ZeusMonitor`](https://ml.energy/zeus/reference/monitor/#zeus.monitor.ZeusMonitor) was used to profile GPU time and energy consumption for the [ML.ENERGY leaderboard](https://ml.energy/leaderboard).
+- \[2023/03\] [Chase](https://symbioticlab.org/publications/files/chase:ccai23/chase-ccai23.pdf), an automatic carbon optimization framework for DNN training, will appear at ICLR'23 workshop.
+- \[2022/11\] [Carbon-Aware Zeus](https://taikai.network/gsf/hackathons/carbonhack22/projects/cl95qxjpa70555701uhg96r0ek6/idea) won the **second overall best solution award** at Carbon Hack 22.
+---
+
+Zeus is a framework for (1) measuring GPU energy consumption and (2) optimizing energy and time for DNN training.
+
+### Measuring GPU energy
+
+```python
+from zeus.monitor import ZeusMonitor
+
+monitor = ZeusMonitor(gpu_indices=[0,1,2,3])
+
+monitor.begin_window("heavy computation")
+# Four GPUs consuming energy like crazy!
+measurement = monitor.end_window("heavy computation")
+
+print(f"Energy: {measurement.total_energy} J")
+print(f"Time  : {measurement.time} s")
+```
+
+### Finding the optimal GPU power limit
+
+Zeus silently profiles different power limits during training and converges to the optimal one.
+
+```python
+from zeus.monitor import ZeusMonitor
+from zeus.optimizer import GlobalPowerLimitOptimizer
+
+monitor = ZeusMonitor(gpu_indices=[0,1,2,3])
+plo = GlobalPowerLimitOptimizer(monitor)
+
+plo.on_epoch_begin()
+
+for x, y in train_dataloader:
+    plo.on_step_begin()
+    # Learn from x and y!
+    plo.on_step_end()
+
+plo.on_epoch_end()
+```
+
+Please refer to our NSDI’23 [paper](https://www.usenix.org/conference/nsdi23/presentation/you) and [slides](https://www.usenix.org/system/files/nsdi23_slides_chung.pdf) for details.
+Checkout [Overview](https://ml.energy/zeus/overview/) for a summary.
+
+Zeus is part of [The ML.ENERGY Initiative](https://ml.energy).
+
+## Repository Organization
+
+```
+.
+├── zeus/                # ⚡ Zeus Python package
+│   ├── optimizer/       #    - GPU energy and time optimizers
+│   ├── run/             #    - Tools for running Zeus on real training jobs
+│   ├── policy/          #    - Optimization policies and extension interfaces
+│   ├── util/            #    - Utility functions and classes
+│   ├── monitor.py       #    - `ZeusMonitor`: Measure GPU time and energy of any code block
+│   ├── controller.py    #    - Tools for controlling the flow of training
+│   ├── callback.py      #    - Base class for Hugging Face-like training callbacks.
+│   ├── simulate.py      #    - Tools for trace-driven simulation
+│   ├── analyze.py       #    - Analysis functions for power logs
+│   └── job.py           #    - Class for job specification
+│
+├── zeus_monitor/        # 🔌 GPU power monitor
+│   ├── zemo/            #    -  A header-only library for querying NVML
+│   └── main.cpp         #    -  Source code of the power monitor
+│
+├── examples/            # 🛠️ Examples of integrating Zeus
+│
+├── capriccio/           # 🌊 A drifting sentiment analysis dataset
+│
+└── trace/               # 🗃️ Train and power traces for various GPUs and DNNs
+```
+
 
 # DeepCloud 
 
@@ -112,7 +207,154 @@ Aqui estão alguns detalhes adicionais sobre os dois métodos:
 Datacenter PUE 1.0 com redução de consumo de energia de 70%
 
 # DeepEnergy
-Ambos os métodos são promissores e provavelmente serão usados em conjunto no futuro, o objetivo presente, do DeepCool ao ampliar o alcance do MECDLM. A combinação de métodos pode levar a uma redução significativa no consumo de energia dos data clouds validada, mensurada, qualificada e certificada na conta de luz, a ser neutralizada com o uso de geradores de energia ativos, full time, turbinas hibridas com eficiência energética de 85%, a gas natural (90%) e hidrogênio (10%) na fase I, podendo chegar a NG/H2 15/85% suprido por gasodutos hibridos NG/H2, ja que as turbinas hibridas já são comerciais e aguardam upgrade das distribuidoras de gas
+Ambos os métodos são promissores e provavelmente serão usados em conjunto no futuro, o objetivo presente, do DeepCool ao ampliar o alcance do MECDLM. A combinação de métodos pode levar a uma redução significativa no consumo de energia dos data clouds validada, mensurada, qualificada e certificada na conta de luz, a ser neutralizada com o uso de geradores de energia ativos, full time, turbinas hibridas com eficiência energética de 85%, a gas natural (90%) e hidrogênio (10%) na fase I, podendo chegar a NG/H2 15/85% suprido por gasodutos hibridos NG/H2, ja que as turbinas hibridas já são comerciais e aguardam upgrade das distribuidoras de gas.
+Lição de casa para a **Arsesp **é responsável​ por regular, controlar e fiscalizar os serviços de distribuição de gás natural canalizado prestado pelas três concessionárias que atuam no mercado paulista: ​a Companhia de Gás de São Paulo (Comgás);
+
+Componentes do Data Center:
+
+Processamento:
+Servidores: Responsáveis pelo processamento de dados.
+Unidades de processamento gráfico (GPUs): Usadas para acelerar cálculos intensivos em paralelo.
+Processadores (CPUs): Realizam as operações de processamento principal.
+Número de núcleos: Determina a capacidade de processamento paralelo do servidor.
+Variáveis relacionadas ao servidor:
+
+Variáveis gerais do servidor:
+cooling_type: Tipo de resfriamento do servidor (air cooling, liquid cooling).
+number_cores: Número de núcleos do servidor.
+intrinsic_temperature_nucleo: Temperatura intrínseca do servidor por núcleo.
+total_memory: Quantidade total de memória do servidor.
+total_storage: Capacidade total de armazenamento do servidor.
+memory_usage: Uso atual de memória.
+storage_usage: Uso atual de armazenamento.
+server_voltage: Tensão de entrada do servidor.
+server_current: Corrente consumida pelo servidor.
+server_power_consumption: Consumo de energia do servidor em kWh.
+hack_voltage: Tensão de entrada do servidor.
+hack_current: Corrente consumida pelo servidor.
+hack_power_consumption: Consumo de energia do servidor em kWh.
+Variáveis do sistema de resfriamento a ar:
+fan_speed: Velocidade das ventoinhas do sistema de resfriamento (air cooling).
+min_fan_speed: Velocidade mínima permitida para as ventoinhas.
+max_fan_speed: Velocidade máxima permitida para as ventoinhas.
+air_flow: Fluxo de ar do sistema de resfriamento a ar.
+min_air_flow: Fluxo de ar mínimo permitido para o sistema de resfriamento a ar.
+max_air_flow: Fluxo de ar máximo permitido para o sistema de resfriamento a ar.
+fan_pwm_min: Valor mínimo de modulação por largura de pulso (PWM) para controlar as ventoinhas.
+fan_pwm_max: Valor máximo de modulação por largura de pulso (PWM) para controlar as ventoinhas.
+Variáveis relacionadas ao sistema de resfriamento líquido (server liquid cooling):
+
+Variáveis do sistema de resfriamento líquido:
+pump_speed: Velocidade da bomba do sistema de resfriamento líquido.
+min_pump_speed: Velocidade mínima permitida para a bomba.
+max_pump_speed: Velocidade máxima permitida para a bomba.
+pump_pwm_min: Valor mínimo de modulação por largura de pulso (PWM) para controlar a bomba.
+pump_pwm_max: Valor máximo de modulação por largura de pulso (PWM) para controlar a bomba.
+pump_voltage: Tensão de entrada do servidor.
+pump_current: Corrente consumida pelo servidor.
+pump_power_consumption: Consumo de energia do servidor em kWh.
+coolant_temperature_in: Temperatura do fluido de resfriamento na entrada do servidor (arrefecimento líquido).
+coolant_temperature_out: Temperatura do fluido de resfriamento na saída do servidor (arrefecimento líquido).
+fluid_flow: Fluxo de fluido no servidor.
+min_fluid_flow: Fluxo mínimo de fluido permitido no servidor.
+max_fluid_flow: Fluxo máximo de fluido permitido no servidor.
+Armazenamento:
+
+Discos rígidos (HDDs): Fornecem armazenamento de dados em dispositivos magnéticos.
+Unidades de estado sólido (SSDs): Fornecem armazenamento de dados em chips de memória flash.
+Capacidade total de armazenamento: Quantidade máxima de dados que o Data Center pode armazenar.
+Uso atual de armazenamento: Quantidade de dados atualmente armazenados no Data Center.
+Transferência de Dados:
+
+Switches de rede: Permitem a conectividade entre servidores e dispositivos de rede.
+Roteadores: Encaminham pacotes de dados entre redes.
+Firewalls: Protegem o Data Center contra ameaças de segurança de rede.
+Taxa de transferência de rede: Velocidade de transferência de dados dentro do Data Center.
+Demanda de Sistemas de Energia:
+
+Tensão de entrada do servidor: Tensão elétrica fornecida ao servidor.
+Corrente consumida pelo servidor: Quantidade de corrente elétrica consumida pelo servidor.
+Consumo de energia do servidor: Quantidade de energia consumida pelo servidor em kWh.
+Resfriamento por Sistema Operacional:
+
+Tipo de resfriamento do servidor: Air Cooling (resfriamento a ar) ou Liquid Cooling (resfriamento líquido).
+Temperatura intrínseca do servidor por núcleo: Temperatura de operação normal do servidor.
+Temperatura do fluido de resfriamento na entrada/saída do servidor: Temperatura do fluido de resfriamento usado para resfriar o servidor.
+*Variáveis relacionadas ao sistema de resfriamento a ar (fan coil server air cooling):
+
+Variáveis do sistema de resfriamento a ar:
+fan_speed: Velocidade das ventoinhas do sistema de resfriamento (air cooling).
+min_fan_speed: Velocidade mínima permitida para as ventoinhas.
+max_fan_speed: Velocidade máxima permitida para as ventoinhas.
+air_flow: Fluxo de ar do sistema de resfriamento a ar.
+min_air_flow: Fluxo de ar mínimo permitido para o sistema de resfriamento a ar.
+max_air_flow: Fluxo de ar máximo permitido para o sistema de resfriamento a ar.
+fan_pwm_min: Valor mínimo de modulação por largura de pulso (PWM) para controlar as ventoinhas.
+fan_pwm_max: Valor máximo de modulação por largura de pulso (PWM) para controlar as ventoinhas.
+coolant_temperature_in: Temperatura do fluido de resfriamento na entrada do servidor (arrefecimento a ar).
+coolant_temperature_out: Temperatura do fluido de resfriamento na saída do servidor (arrefecimento a ar).
+voltage: Tensão
+current: Corrente consumida
+power_consumption: Consumo de energia kWh.
+Variáveis relacionadas ao sistema de resfriamento centralizado (central chiller system):
+
+Variáveis do sistema de resfriamento
+
+centralizado:
+
+chiller_temperature_in: Temperatura do fluido de resfriamento na entrada da central de água gelada.
+chiller_temperature_out: Temperatura do fluido de resfriamento na saída da central de água gelada.
+chiller_voltage: Tensão de alimentação do sistema de resfriamento centralizado.
+chiller_current: Corrente elétrica consumida pelo sistema de resfriamento centralizado.
+chiller_power: Consumo de energia do sistema de resfriamento centralizado em kWh.
+chiller_pump_speed: Velocidade da bomba de circulação do sistema de resfriamento centralizado.
+chiller_fan_speed: Velocidade dos ventiladores do sistema de resfriamento centralizado.
+pump_voltage_cooling: Tensão de entrada do bomba
+pump_current_cooling: Corrente consumida pela bomba
+pump_power_consumption_cooling: Consumo de energia do servidor em kWh.
+pump_voltage_hot: Tensão da bomba de condensação.
+pump_current_hot: Corrente da bomba de condensação.
+`pump_power_consumption_hot: Consumo da bomba de condensação.
+cooling_tower_voltage: Tensão do motor da Torre de Resfriamento
+cooling_tower_current: Corrente do motor da Torre de Resfriamento
+`cooling_tower_consumption: Consumo do motor da Torre de Resfriamento
+Demanda de Energia e Resfriamento para os Sistemas de Energia:
+
+Consumo de energia do sistema de resfriamento centralizado: Quantidade de energia consumida pelo sistema de resfriamento centralizado em kWh.
+Velocidade da bomba de circulação do sistema de resfriamento centralizado: Velocidade da bomba do sistema de resfriamento centralizado.
+Velocidade dos ventiladores do sistema de resfriamento centralizado: Velocidade dos ventiladores do sistema de resfriamento centralizado.
+Potência do sistema de resfriamento centralizado: Consumo total de energia do sistema de resfriamento centralizado.
+Temperatura do fluido de resfriamento na entrada/saída da central de água gelada: Temperatura do fluido de resfriamento usado no sistema de resfriamento centralizado.
+Parâmetros PUE (Power Usage Effectiveness) para Sistemas de Resfriamento:
+
+Energia total consumida pelo Data Center.
+Energia consumida exclusivamente pelos servidores.
+Energia consumida pelo sistema de resfriamento líquido (chiller).
+Esses são alguns dos principais componentes e parâmetros relacionados ao processamento, armazenamento, transferência de dados, demandas de sistemas de energia, resfriamento por sistema operacional e demandas de energia e resfriamento para os sistemas de energia em um Data Center.
+
+Parâmetros PUE para sistemas de resfriamento:
+
+O PUE (Power Usage Effectiveness) é uma métrica usada para avaliar a eficiência energética de um data center. Ele é calculado como a razão entre a energia total consumida pelo data center (incluindo servidores, sistemas de resfriamento, iluminação, etc.) e a energia consumida exclusivamente pelos servidores.
+
+Para o cálculo do PUE, os seguintes parâmetros são utilizados:
+
+Para sistemas de resfriamento a ar (air cooling):
+
+power_total: Energia total consumida pelo data center.
+
+power_servers: Energia consumida exclusivamente pelos servidores.
+
+PUE = power_total / power_servers
+
+Para sistemas de resfriamento líquido (liquid cooling):
+
+power_total: Energia total consumida pelo data center.
+
+power_servers: Energia consumida exclusivamente pelos servidores.
+
+power_chiller: Energia consumida pelo sistema de resfriamento líquido (chiller).
+
+PUE = (power_total - power_chiller) / power_servers
 
 # DeepH2
 H2. Esse cara é um elemnto importante do hack energy e transição para NetZero
@@ -129,14 +371,14 @@ Sistema de aspersão de vapor (15 oC na entrada das deepturbines) para assegurar
 # DeepFood
 DeepFood reduz a conta de energia dos sistemas de refrigeração e gas do nosso proximo fogão wok, https://youtu.be/02QMhK3OAdw, portanto, deepfood vai muito além, pois demanda gasodutos hibridos, gas natural e hidrogênio, inciando a NG/H2 90/10%, para fogões, aquecedodores residenciais, residenciais, comerciais e industriais impactando e reduzindo significativamente as emissões 
 
-# DeepODS 
+# DeepHackEnergy
+
 os 17 ODS e 169 metas e indicadores são atendidos pelo #DeepHack no sistema de energia, antes, durante e depois da trainsição #netZero em 2050, passando por redução de emissões em 20% até o ODS2030, base emissões 2017, aumento do gdp per capita em São Paulo para US$50.000,00 até 2030 alinhado alinhado ao PANCLIMA para zerar ao aquecimento global até 2050, sub produto de power losses (ineficiência energética)
 
 <img src="https://lh4.googleusercontent.com/N-jysswi3F09FriSlYmm9eVVTNQlmixAwZ_qPVPkfYWgPI0SByr1dyFM8JreMtxQ07tFUMceq79SzKyz21OY86-n3QDIudZfcwKNBTMU60raco1n29XJTVJqNh7toeCVo8z3C-rEwT8qKNO-gcC-9sU" width="80%" height="80%" />
 
 
 <img src="https://lh6.googleusercontent.com/z_UI18ELpfqeMJOWqBVf8Oc8nhAzsvbxHooJAMTCWH8CAXSl5OSFXsevBvy-YIJEZ8VR_E9bIfFMNZuscCBXW5XfTbIrnCTKL-nggJOdJ3Iw2euU8D7aijD0uKTS5cQhqvSD0_8JzEHlufVS_QNka_s" width="80%" height="80%" />
-
 
 # DeepRendaPercapita
 Graças ao Pré Sal, Maricá no Rio de Janeiro teve incremento de renda per capita de US$2000.00 em 2010, para US$45.000 em 2019, maior que o japão, portanto, vale a penao o #hackenergy com expectativa de melhor ganho em renda per capita.
