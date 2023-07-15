@@ -382,3 +382,7 @@ os 17 ODS e 169 metas e indicadores são atendidos pelo #DeepHack no sistema de 
 
 # DeepRendaPercapita
 Graças ao Pré Sal, Maricá no Rio de Janeiro teve incremento de renda per capita de US$2000.00 em 2010, para US$45.000 em 2019, maior que o japão, portanto, vale a penao o #hackenergy com expectativa de melhor ganho em renda per capita.
+
+# DeepPi3B
+
+Rodar a porra toda num rasp
