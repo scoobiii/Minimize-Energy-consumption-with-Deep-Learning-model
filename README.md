@@ -6,7 +6,10 @@ O modelo AI usa o algoritmo Q-Learning para determinar a melhor ação em cada e
 O Q-Learning é baseado nas equações de Bellman que estão na raiz do Reinforcement Learning.
 
 # Descrição
-O projeto visa reduzir o consumo de energia de uma instalação industrial. Um modelo de otimização de aprendizado profundo é usado e comparado com o sistema de resfriamento integrado tradicional. A abordagem é inspirada na redução de 40% alcançada nos data clouds do Google usando o modelo DeepMind AI. O projeto faz parte do módulo de Inteligência Artificial para Negócios da Udemy.
+O projeto visa reduzir o consumo de energia de uma instalação industrial. Um modelo de otimização de aprendizado profundo é usado e comparado com o sistema de resfriamento integrado tradicional. A abordagem é inspirada na redução de 40% alcançada nos data clouds do Google usando o modelo DeepMind AI. O projeto faz parte do módulo 
+- Deep Energy & Cool Inteligência Artificial para Negócios da Udemy e incorporado ao
+- ENERGY EFFICIENCY CONSIDERATIONS FOR HPC PROCUREMENT DOCUMENT: 2.0.1. e
+- Open Compute
 
 Neste cenário, existem duas premissas principais:
 - A temperatura intrínseca de um servidor é função da temperatura atmosférica, do número de usuários no servidor e da taxa de transmissão de dados. A relação é aproximada por uma combinação linear dessas 3 variáveis. Os coeficientes são estimados usando análise de regressão.
