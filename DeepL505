@@ -1,1 +1,101 @@
+# como era
 
+Parabéns pelo trabalho! Você construiu um sistema de gerenciamento de energia usando o Aprendizado Profundo (Deep Q-Learning) com Replay de Experiência. Seu modelo conseguiu economizar 68% de energia em comparação com o cenário em que não há intervenção do AI. Isso é um resultado impressionante!
+
+Aqui estão algumas sugestões para continuar melhorando seu sistema:
+
+1. **Ajuste de Hiperparâmetros**: Experimente ajustar os hiperparâmetros do modelo, como a taxa de aprendizado, o tamanho da memória de replay e o desconto (discount factor). Pequenas alterações nesses parâmetros podem ter um grande impacto no desempenho do modelo.
+
+2. **Aumentar o número de ações**: Atualmente, você está usando 5 ações para o agente escolher: diminuir a temperatura em 3°C, diminuir a temperatura em 1.5°C, manter a temperatura, aumentar a temperatura em 1.5°C e aumentar a temperatura em 3°C. Experimente aumentar o número de ações para permitir uma escolha mais fina de ajuste de temperatura.
+
+3. **Testar em diferentes ambientes**: Realize testes do modelo em diferentes ambientes com variações nas condições, como mudanças na carga de trabalho do servidor, variações de temperatura ambiente e outras situações relevantes.
+
+4. **Introduza mais features**: O modelo atual está usando apenas três características (temperatura do servidor, número de usuários e taxa de dados). Você pode adicionar mais informações relevantes para o modelo, como informações sobre a ventoinha, a temperatura externa, entre outros.
+
+5. **Política de exploração**: Experimente diferentes políticas de exploração, como a política Epsilon-Greedy ou a política Boltzmann, para explorar mais eficientemente o espaço de ações.
+
+6. **Arquitetura da Rede Neural**: Tente modificar a arquitetura da rede neural, adicionando mais camadas ou ajustando o número de unidades nas camadas existentes. Isso pode ajudar o modelo a aprender representações mais complexas.
+
+7. **Tunning da função de recompensa**: A função de recompensa é crucial para o aprendizado do agente. Experimente diferentes formas de recompensa para ver como isso afeta o desempenho do modelo.
+
+8. **Mais épocas de treinamento**: Você pode aumentar o número de épocas de treinamento para permitir que o modelo aprenda por mais tempo.
+
+Lembre-se de que o treinamento de modelos de Aprendizado Profundo pode ser computacionalmente intensivo, especialmente com grande quantidade de dados e arquiteturas de redes complexas. Considere a possibilidade de usar GPUs ou TPUs para acelerar o treinamento, se disponível.
+
+Continue explorando e ajustando o modelo para alcançar resultados ainda melhores! O campo de Aprendizado de Máquina e Inteligência Artificial é vasto, e sempre há espaço para melhorias e inovações. Boa sorte em suas futuras explorações!
+
+# producao-requisitos
+
+tenho as variaveis de entrada
+
+
+0. liste os processos pid em execucao 
+0.1 liste o consumo de energia (carga de trabalho por pid)
+1. liste temperartura dos nucleos
+2.liste  temperatura do servidor interna 
+3. liste temperatura do ambiente (estou dentro do mcdonalds praça da republica e nao sei a temperatura)
+4. liste tbs externa praça da republica sao paulo brasil, qual temperatura e umidade relativa vento para calculo de resfriamento externo para uso no modelo
+5. liste consumo de energia do notebook (kwh) como calcular explique
+6. liste saidas. velocidade da ventoinha (pwm para velocidade minima na menor carga de trabalho e velocidade maxima na maior carga de trabalho)
+7. liste performance do sistema na menor carga de trabalho 
+7.1 liste  performance do sistema (note) na maior carga de trabalho
+8. liste consumo de energia na menor carga de trabalho
+9. liste consumo de energia na maior carga de trabalho
+10. liste sugestao
+11. explique e reescreva o model deep learning abaixo para se aplicado em tempo real no meu notebook controlando a ventoinha atraves de um script sujeito as saidas do modelo sobre a velocidade da ventoinha 
+
+Parece que você está usando um modelo de Aprendizado por Reforço Profundo (Deep Q-Learning) para gerenciar o consumo de energia de um servidor de acordo com a carga de trabalho. Abaixo, eu responderei a cada uma das suas solicitações:
+
+0. Listar os processos PID em execução:
+Para listar os processos PID em execução no Ubuntu, você pode usar o comando `ps aux`. Para visualizar apenas os PIDs, você pode executar `ps aux | awk '{print $2}'`.
+
+0.1. Listar o consumo de energia (carga de trabalho por PID):
+O consumo de energia por PID é uma informação específica do seu hardware e, infelizmente, não pode ser obtido diretamente com os comandos de terminal. Você precisaria de ferramentas específicas ou bibliotecas para monitorar o consumo de energia em tempo real para cada processo.
+
+1. Listar a temperatura dos núcleos:
+Para listar a temperatura dos núcleos do seu processador no Ubuntu, você pode usar o comando `sensors` se tiver o pacote lm-sensors instalado. Caso ainda não tenha instalado, você pode fazer isso com o seguinte comando:
+
+```
+sudo apt-get install lm-sensors
+```
+
+Em seguida, execute `sensors` para visualizar as leituras das temperaturas do seu processador.
+
+2. Listar a temperatura interna do servidor:
+A temperatura interna do servidor geralmente não está disponível para leitura direta por software. É uma informação monitorada por sensores físicos incorporados ao hardware do servidor. O acesso a esses sensores geralmente é feito através de ferramentas de gerenciamento de servidor específicas fornecidas pelo fabricante do servidor.
+
+3. Listar a temperatura do ambiente:
+Para obter a temperatura ambiente na Praça da República em São Paulo, você pode verificar os sites de meteorologia ou usar aplicativos que fornecem informações de temperatura para a localização específica.
+
+4. Listar a temperatura e a umidade externas na Praça da República em São Paulo para cálculo de resfriamento externo:
+Novamente, para obter informações precisas sobre a temperatura e a umidade externas na Praça da República em São Paulo, é necessário consultar sites de meteorologia ou aplicativos que forneçam dados meteorológicos em tempo real para essa localização.
+
+5. Listar o consumo de energia do notebook (kWh) e como calcular:
+Para calcular o consumo de energia do notebook, você precisará monitorar o uso da bateria ao longo do tempo e converter a quantidade de energia consumida para kWh. Infelizmente, não há uma forma simples de fazer isso apenas com comandos no terminal. Em alguns notebooks, você pode encontrar a informação do consumo de energia na BIOS ou em ferramentas específicas fornecidas pelo fabricante.
+
+6. Listar as saídas. Velocidade da ventoinha (PWM para velocidade mínima na menor carga de trabalho e velocidade máxima na maior carga de trabalho):
+Parece que as saídas da sua simulação são a quantidade total de energia gasta com e sem a AI (ventoinha). Não está claro como isso está relacionado com a velocidade da ventoinha, mas geralmente, a velocidade da ventoinha é controlada pelo sistema operacional ou BIOS com base na temperatura do hardware.
+
+7. Listar a performance do sistema na menor carga de trabalho e a performance do sistema na maior carga de trabalho:
+Não há informações sobre como a performance do sistema é medida na sua simulação, mas em geral, a performance pode ser avaliada através de métricas como o tempo de resposta, a quantidade de tarefas executadas por unidade de tempo, a utilização da CPU e da memória, etc.
+
+8. Listar o consumo de energia na menor carga de trabalho:
+O consumo de energia na menor carga de trabalho parece ser a quantidade de energia gasta sem o uso da AI (ventoinha). Os valores específicos de consumo de energia variam de acordo com o hardware do servidor e o consumo de energia específico de cada componente.
+
+9. Listar o consumo de energia na maior carga de trabalho:
+O consumo de energia na maior carga de trabalho parece ser a quantidade de energia gasta com o uso da AI (ventoinha). Mais uma vez, os valores específicos de consumo de energia variam de acordo com o hardware e o consumo de energia específico de cada componente.
+
+10. Listar sugestão:
+Não há sugestão fornecida na simulação.
+
+11. Explique e reescreva o modelo de aprendizado profundo abaixo para ser aplicado em tempo real no seu notebook, controlando a ventoinha através de um script sujeito às saídas do modelo sobre a velocidade da ventoinha:
+O modelo de aprendizado profundo fornecido é um agente de controle que toma decisões sobre o gerenciamento do consumo de energia com base em dados como a temperatura ambiente, número de usuários e taxa de dados. No entanto, é um modelo de simulação e não está claro como exatamente ele deve ser aplicado em tempo real no seu notebook. Controlar a velocidade da ventoinha em tempo real requer acesso aos sensores de temperatura do hardware e mecanismos para controlar a velocidade da ventoinha.
+
+Para controlar a ventoinha em tempo real em um notebook com base nos dados fornecidos pelo modelo de aprendizado profundo, você precisaria desenvolver um script que:
+
+- Monitorasse a temperatura do hardware em tempo real.
+- Recebesse informações sobre a carga de trabalho do modelo de aprendizado profundo.
+- Com base nessas informações, determinasse a velocidade desejada da ventoinha para resfriar o hardware de forma eficiente.
+- Utilizasse bibliotecas ou ferramentas específicas para controlar a velocidade da ventoinha.
+
+Lembre-se de que a implementação real desse controle de ventoinha pode variar dependendo do hardware específico do seu notebook e dos recursos disponíveis para acessar sensores e controlar a ventoinha. É importante ter cuidado ao modificar o controle da ventoinha para garantir que o hardware seja resfriado de forma adequada e segura.
